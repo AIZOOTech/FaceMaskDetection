@@ -1,5 +1,6 @@
 # FaceMaskDetection
 **检测人脸并判断是否佩戴了口罩**
+
 Detect faces and determine whether they are  wearing mask.
 
 **首先，祝愿我国和世界各国早日战胜新冠肺炎疫情，武汉加油！中国加油！**
@@ -8,7 +9,7 @@ Detect faces and determine whether they are  wearing mask.
 
 
 * 开源了标注的7959张人脸标注图片，数据集来自于[WIDER Face](http://shuoyang1213.me/WIDERFACE/)和[MAFA](http://www.escience.cn/people/geshiming/mafa.html)数据集, 我们重新修改了标注并进行了校验(主要是
-MAFA和WIDER Face的人脸位置定义不一样，所以我们进行了修改标注)并将其开源出来。（有需要的朋友，敬请关注我们新建的公众号AIZOO（本文末也要二维码，可以扫描关注），回复**口罩数据集**就可以了。公众号刚开，恳请大家帮忙关注和扩散一下～）
+MAFA和WIDER Face的人脸位置定义不一样，所以我们进行了修改标注)并将其开源出来。（有需要的朋友，敬请关注我们新建的公众号AIZOO（本文末也有二维码，可以扫描关注），回复**口罩数据集**就可以了。公众号刚开，恳请大家帮忙关注和扩散一下～）
 
 
 ![](/img/demo.png)
