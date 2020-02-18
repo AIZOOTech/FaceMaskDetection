@@ -52,11 +52,15 @@ caffe运行方法基本类似，只不过将`infer.py`换成`caffe_infer.py即�
 ### 问题反馈与交流
 欢迎AI圈和科技圈的朋友关注我们的公众号，这是我们分享AI技术和资讯的地方。我们要做的事情是搭建开发者和AI算法和产品需求方的一个桥梁，欢迎有AI算法需求的朋友关注我们。
 ![](https://github.com/AIZOOTech/FaceMaskDetection/tree/master/img/wx.png)
+
 **如果你有任何问题，欢迎关注我们的公众号，通过后台给我留言，或者添加作者元峰的微信AIZOOTech与我联系 ，我会将您拉入AIZOO技术交流群。**
 
 ### 模型结构图
+
 为了可视化方便，我们省略了BN层，如果您要查看完整模型，可以查看`img`文件夹的`face_mask_detection.hdf5.png`图片
+
 ![](https://github.com/AIZOOTech/FaceMaskDetection/tree/master/img/face_mask_detection.caffemodel.png)
+
 ### 测试集PR曲线
 因为WIDER face是一个任务比较复杂的数据集，我们的模型又设计的非常小，所以对于人脸的PR曲线并不是那么性感。这点可以通过设计大模型来提升对于小人脸的检测效果，如果您有需求，欢迎通过上述二维码联系我们。
 ![](https://github.com/AIZOOTech/FaceMaskDetection/tree/master/img/pr_curve.png)
