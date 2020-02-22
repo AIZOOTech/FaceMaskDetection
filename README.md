@@ -1,6 +1,9 @@
 # FaceMaskDetection
-<font color=red size=5>[updates]</font>
-<font color=red size=4>人脸口罩检测，现开源所有主流框架模型和推理代码，支持的框架如下：</font>
+```diff
+
+- <font color=red size=5>[updates]</font>
+- <font color=red size=4>人脸口罩检测，现开源所有主流框架模型和推理代码，支持的框架如下：</font>
+```
  - [x] PyTorch
 - [x] TensorFlow（包含tflite模型和pb模型）
 - [x] Keras
@@ -68,7 +71,7 @@ python tensorflow_infer.py  --img-path /path/to/your/img
 
 **如果你有任何问题，欢迎关注我们的公众号，通过后台给我留言，或者添加作者元峰的微信AIZOOTech与我联系 ，我会将您拉入AIZOO技术交流群。**
 我们的技术交流群二维码，欢迎算法开发者和需求方进群交流，请输入备注，例如`张三丰-浙大-目标检测`或者`张三丰-腾讯-图像分割`
-![](/img/wxgroup.jpg)
+![](/img/wxgroup.jpeg)
 
 ### 模型结构图
 为了可视化方便，我们省略了BN层，如果您要查看完整模型，可以查看`img`文件夹的`face_mask_detection.hdf5.png`图片
@@ -84,7 +87,7 @@ python tensorflow_infer.py  --img-path /path/to/your/img
 
 [aizoo.com跑在您浏览器的口罩检测模型](https://aizoo.com/face-mask-detection.html)
 
-![](/img/face.png)
+![](/img/facemask.gif)
 
 
 
