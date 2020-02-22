@@ -1,16 +1,17 @@
 # -*- coding:utf-8 -*-
 import cv2
 import time
-import caffe
 import argparse
+
 import numpy as np
 from PIL import Image
+from keras.models import model_from_json
 from utils.anchor_generator import generate_anchors
 from utils.anchor_decode import decode_bbox
 from utils.nms import single_class_non_max_suppression
-from load_model.caffe_loader import load_caffe_model, caffe_inference
+from load_model.keras_loader import load_keras_model, keras_inference
 
-model = load_caffe_model('models/face_mask_detection.prototxt','models/face_mask_detection.caffemodel');
+model = load_keras_model('models/face_mask_detection.json', 'models/face_mask_detection.hdf5')
 
 # anchor configuration
 feature_map_sizes = [[33, 33], [17, 17], [9, 9], [5, 5], [3, 3]]
@@ -51,22 +52,20 @@ def inference(image,
     image_np = image_resized / 255.0  # 归一化到0~1
     image_exp = np.expand_dims(image_np, axis=0)
 
-    image_transposed = image_exp.transpose((0, 3, 1, 2))
-
-    y_bboxes_output, y_cls_output = caffe_inference(model, image_transposed)
+    y_bboxes_output, y_cls_output = keras_inference(model, image_exp)
     # remove the batch dimension, for batch is always 1 for inference.
     y_bboxes = decode_bbox(anchors_exp, y_bboxes_output)[0]
     y_cls = y_cls_output[0]
     # To speed up, do single class NMS, not multiple classes NMS.
     bbox_max_scores = np.max(y_cls, axis=1)
     bbox_max_score_classes = np.argmax(y_cls, axis=1)
-    
+
     # keep_idx is the alive bounding box after nms.
     keep_idxs = single_class_non_max_suppression(y_bboxes,
-                                                    bbox_max_scores,
-                                                    conf_thresh=conf_thresh,
-                                                    iou_thresh=iou_thresh,
-                                                    )
+                                                 bbox_max_scores,
+                                                 conf_thresh=conf_thresh,
+                                                 iou_thresh=iou_thresh,
+                                                 )
 
     for idx in keep_idxs:
         conf = float(bbox_max_scores[idx])
@@ -82,9 +81,9 @@ def inference(image,
             if class_id == 0:
                 color = (0, 255, 0)
             else:
-                color = (255, 0 , 0)
+                color = (255, 0, 0)
             cv2.rectangle(image, (xmin, ymin), (xmax, ymax), color, 2)
-            cv2.putText(image, "%s: %.2f" % (id2class[class_id], conf), (xmin + 2, ymin-2),
+            cv2.putText(image, "%s: %.2f" % (id2class[class_id], conf), (xmin + 2, ymin - 2),
                         cv2.FONT_HERSHEY_SIMPLEX, 0.8, color)
         output_info.append([class_id, conf, xmin, ymin, xmax, ymax])
 
@@ -113,12 +112,12 @@ def run_on_video(video_path, output_video_name, conf_thresh):
         read_frame_stamp = time.time()
         if (status):
             inference(img_raw,
-                             conf_thresh,
-                             iou_thresh=0.5,
-                             target_shape=(260, 260),
-                             draw_result=True,
-                             show_result=False)
-            cv2.imshow('image', img_raw[:,:,::-1])
+                      conf_thresh,
+                      iou_thresh=0.5,
+                      target_shape=(260, 260),
+                      draw_result=True,
+                      show_result=False)
+            cv2.imshow('image', img_raw[:, :, ::-1])
             cv2.waitKey(1)
             inference_stamp = time.time()
             # writer.write(img_raw)
@@ -129,7 +128,6 @@ def run_on_video(video_path, output_video_name, conf_thresh):
                                                                    inference_stamp - read_frame_stamp,
                                                                    write_frame_stamp - inference_stamp))
     # writer.release()
-
 
 
 if __name__ == "__main__":

@@ -1,11 +1,19 @@
 # FaceMaskDetection
-**检测人脸并判断是否佩戴了口罩**
+<font color=red size=5>[updates]</font>
+<font color=red size=4>人脸口罩检测，现开源所有主流框架模型和推理代码，支持的框架如下：</font>
+ - [x] PyTorch
+- [x] TensorFlow（包含tflite模型和pb模型）
+- [x] Keras
+- [x] MXNet
+- [x] Caffe
+
+**检测人脸并判断是否佩戴了口罩， 并开源近8000张人脸口罩标注数据**
 
 Detect faces and determine whether they are  wearing mask.
 
 **首先，祝愿我国和世界各国早日战胜新冠肺炎疫情，武汉加油！中国加油！**
 
-*  我们开源了人脸口罩检测的**Keras模型**以及**caffe模型**（keras模型转换得到的），并提供了Keras的运行代码和Caffe的运行代码（训练代码我们整理好后会立即开源）。模型在`models`文件夹下。
+*  我们开源了人脸口罩检测的**所有主流框架（PyTorch、TensorFlow、Keras、MXNet和caffe）**（使用keras训练的模型，并转换得到的其他框架模型），并提供了**所有五大框架 **的的运行代码（训练代码我们整理好后会立即开源）。所有模型都在`models`文件夹下。
 
 
 * 开源了标注的7959张人脸标注图片，数据集来自于[WIDER Face](http://shuoyang1213.me/WIDERFACE/)和[MAFA](http://www.escience.cn/people/geshiming/mafa.html)数据集, 我们重新修改了标注并进行了校验(主要是
@@ -33,29 +41,34 @@ MAFA和WIDER Face的人脸位置定义不一样，所以我们进行了修改标
 |第五层|3x3|0.64,0.72|1,0.62,0.42|
 
 ## 运行方法
-### keras
+### pytorch
 如果您要运行图片：
 ```
-python infer.py  --img-path /path/to/your/img
+python pytorch_infer.py  --img-path /path/to/your/img
 ```
 如果您要在视频上跑，只需要：
 ```
-python infer.py --img-mode 0 --video-path /path/to/video  
+python pytorch_infer.py --img-mode 0 --video-path /path/to/video  
 # 如果要打开本地摄像头, video_path填写0就可以了，如下
 python infer.py --img-mode 0 --video-path 0
 ```
-### caffe
-caffe运行方法基本类似，只不过将`infer.py`换成`caffe_infer.py即可`
-**注意，我们使用了permute层，所以需要使用caffe-ssd，也就是SSD作者开源的[caffe版本](https://github.com/weiliu89/caffe/tree/ssd)**，官方版本的caffe并不包含permute层。
+### TensorFlow/Keras/MXNet/Caffe
+另外四大框架运行方法基本类似，只不过将`pytorch_infer.py`中`pytorch`的换成`对应框架名字即可即可`，以`TensorFlow`为例：
+```
+python tensorflow_infer.py  --img-path /path/to/your/img
+```
+**注意，对于caffe的推理，我们使用了permute层，所以需要使用caffe-ssd，也就是SSD作者开源的[caffe版本](https://github.com/weiliu89/caffe/tree/ssd)**，官方版本的caffe并不包含permute层。您也可以使用opencv的dnn模块来加载模型推理，opencv支持permute层。
 
 不过如果您需要可以在官方版本的caffe上可以运行的模型，也可以联系我们修改模型，实现不需要permute层的模型。
 ## 附录
 ### 问题反馈与交流
-欢迎AI圈和科技圈的朋友关注我们的公众号，这是我们分享AI技术和资讯的地方。我们要做的事情是搭建开发者和AI算法和产品需求方的一个桥梁，欢迎有AI算法需求的朋友关注我们。
+欢迎AI圈和科技圈的朋友关注我们的公众号，这是我们分享AI技术和资讯的地方。我们要做的事情是搭建开发者和AI算法和产品需求方的一个桥梁，欢迎有AI算法需求的朋友关注我们，也欢迎有熟练算法和开发经验的工程师添加我们，与我们交流。
 
 ![](/img/wx.png)
 
 **如果你有任何问题，欢迎关注我们的公众号，通过后台给我留言，或者添加作者元峰的微信AIZOOTech与我联系 ，我会将您拉入AIZOO技术交流群。**
+我们的技术交流群二维码，欢迎算法开发者和需求方进群交流，请输入备注，例如`张三丰-浙大-目标检测`或者`张三丰-腾讯-图像分割`
+![](/img/wxgroup.jpg)
 
 ### 模型结构图
 为了可视化方便，我们省略了BN层，如果您要查看完整模型，可以查看`img`文件夹的`face_mask_detection.hdf5.png`图片
