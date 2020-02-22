@@ -1,7 +1,7 @@
 # FaceMaskDetection
 
 ## [updates]
-###人脸口罩检测，现开源所有主流框架模型和推理代码，支持的框架如下：
+### 人脸口罩检测，现开源所有主流框架模型和推理代码，支持的框架如下：
 
  - [x] PyTorch
 - [x] TensorFlow（包含tflite模型和pb模型）
@@ -70,6 +70,7 @@ python tensorflow_infer.py  --img-path /path/to/your/img
 
 **如果你有任何问题，欢迎关注我们的公众号，通过后台给我留言，或者添加作者元峰的微信AIZOOTech与我联系 ，我会将您拉入AIZOO技术交流群。**
 我们的技术交流群二维码，欢迎算法开发者和需求方进群交流，请输入备注，例如`张三丰-浙大-目标检测`或者`张三丰-腾讯-图像分割`
+
 ![](/img/wxgroup.jpeg)
 
 ### 模型结构图
