@@ -1,8 +1,8 @@
 # FaceMaskDetection
 ```diff
 
-- <font color=red size=5>[updates]</font>
-- <font color=red size=4>人脸口罩检测，现开源所有主流框架模型和推理代码，支持的框架如下：</font>
+-  [updates]
+- 人脸口罩检测，现开源所有主流框架模型和推理代码，支持的框架如下：
 ```
  - [x] PyTorch
 - [x] TensorFlow（包含tflite模型和pb模型）
