@@ -24,7 +24,7 @@ MAFA和WIDER Face的人脸位置定义不一样，所以我们进行了修改标
 
 ![](/img/demo.png)
 ## 模型结构
-我们在本项目中使用了SSD类型的架构，为了让模型可以实时的跑在浏览器以及终端设备上，我们将模型设计的非常小，只有101.5万个参数。模型结构在本文附录部分。
+我们在本项目中使用了SSD类型的架构，为了让模型可以实时的跑在浏览器以及终端设备上，**我们将模型设计的非常小，只有101.5万个参数。**模型结构在本文附录部分。
 
 本模型输入大小为260x260，主干网络只有8个卷积层，加上定位和分类层，一共只有24层（每层的通道数目基本都是32\64\128），所以模型特别小，只有101.5万参数。模型对于普通人脸基本都能检测出来，但是对于小人脸，检测效果肯定不如大模型。具体效果，大家可以点击以下链接，访问我们的网站在线体验效果。
 [aizoo.com跑在您浏览器的口罩检测模型](https://aizoo.com/face-mask-detection.html)
@@ -34,7 +34,7 @@ MAFA和WIDER Face的人脸位置定义不一样，所以我们进行了修改标
 模型在五个卷积层上接出来了定位分类层，其大小和anchor设置信息如下表.
 
 
-| 卷积层 | 特征图大小 | anchor大小 | anchor长宽比（aspect ratio）|
+| 卷积层 | 特征图大小 | anchor大小 | anchor宽高比（aspect ratio）|
 | ---- | ---- | ---- | ---- |
 |第一层|33x33|0.04,0.056|1,0.62,0.42|
 |第二层|17x17|0.08,0.11|1,0.62,0.42|
@@ -52,7 +52,7 @@ python pytorch_infer.py  --img-path /path/to/your/img
 ```
 python pytorch_infer.py --img-mode 0 --video-path /path/to/video  
 # 如果要打开本地摄像头, video_path填写0就可以了，如下
-python infer.py --img-mode 0 --video-path 0
+python pytorch_infer.py --img-mode 0 --video-path 0
 ```
 ### TensorFlow/Keras/MXNet/Caffe
 另外四大框架运行方法基本类似，只不过将`pytorch_infer.py`中`pytorch`的换成`对应框架名字即可即可`，以`TensorFlow`为例：
@@ -71,15 +71,13 @@ python tensorflow_infer.py  --img-path /path/to/your/img
 **如果你有任何问题，欢迎关注我们的公众号，通过后台给我留言，或者添加作者元峰的微信AIZOOTech与我联系 ，我会将您拉入AIZOO技术交流群。**
 我们的技术交流群二维码，欢迎算法开发者和需求方进群交流，请输入备注，例如`张三丰-浙大-目标检测`或者`张三丰-腾讯-图像分割`
 
-![](/img/wxgroup.jpeg)
-
 ### 模型结构图
 为了可视化方便，我们省略了BN层，如果您要查看完整模型，可以查看`img`文件夹的`face_mask_detection.hdf5.png`图片
 
 ![](/img/face_mask_detection.caffemodel.png)
 
 ### 测试集PR曲线
-因为WIDER face是一个任务比较复杂的数据集，我们的模型又设计的非常小，所以对于人脸的PR曲线并不是那么性感。这点可以通过设计大模型来提升对于小人脸的检测效果，如果您有需求，欢迎通过上述二维码联系我们。
+因为WIDER face是一个任务比较复杂的数据集，我们的模型又设计的非常小，所以对于人脸的PR曲线并不是那么性感。**这点可以通过设计大模型来提升对于小人脸的检测效果，如果您有需求，欢迎通过上述二维码联系我们。**
 ![](/img/pr_curve.png)
 
 ### 我们的网页长这样
