@@ -15,7 +15,7 @@ Detect faces and determine whether they are  wearing mask.
 
 **首先，祝愿我国和世界各国早日战胜新冠肺炎疫情，武汉加油！中国加油！**
 
-*  我们开源了人脸口罩检测的**所有主流框架（PyTorch、TensorFlow、Keras、MXNet和caffe）**（使用keras训练的模型，并转换得到的其他框架模型），并提供了**所有五大框架**的的推理代码。所有模型都在`models`文件夹下。
+*  我们开源了人脸口罩检测的**所有主流框架（PyTorch、TensorFlow、Keras、MXNet和caffe）的相应模型**（使用keras训练的模型，并转换得到的其他框架模型），并提供了**所有五大框架**的的推理代码。所有模型都在`models`文件夹下。
 
 
 * 开源了标注的7959张人脸标注图片，数据集来自于[WIDER Face](http://shuoyang1213.me/WIDERFACE/)和[MAFA](http://www.escience.cn/people/geshiming/mafa.html)数据集, 我们重新修改了标注并进行了校验(主要是
