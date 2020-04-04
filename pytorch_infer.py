@@ -10,10 +10,11 @@ from utils.anchor_decode import decode_bbox
 from utils.nms import single_class_non_max_suppression
 from load_model.pytorch_loader import load_pytorch_model, pytorch_inference
 
-model = load_pytorch_model('models/face_mask_detection.pth');
+model = load_pytorch_model('models/model360.pth');
 
 # anchor configuration
-feature_map_sizes = [[33, 33], [17, 17], [9, 9], [5, 5], [3, 3]]
+#feature_map_sizes = [[33, 33], [17, 17], [9, 9], [5, 5], [3, 3]]
+feature_map_sizes = [[45, 45], [23, 23], [12, 12], [6, 6], [4, 4]]
 anchor_sizes = [[0.04, 0.056], [0.08, 0.11], [0.16, 0.22], [0.32, 0.45], [0.64, 0.72]]
 anchor_ratios = [[1, 0.62, 0.42]] * 5
 
@@ -142,7 +143,7 @@ if __name__ == "__main__":
         imgPath = args.img_path
         img = cv2.imread(imgPath)
         img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
-        inference(img, show_result=True, target_shape=(260, 260))
+        inference(img, show_result=True, target_shape=(360, 360))
     else:
         video_path = args.video_path
         if args.video_path == '0':

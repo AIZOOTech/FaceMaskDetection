@@ -1,6 +1,6 @@
 import sys
 import torch
-sys.path.append('load_model/')
+sys.path.append('models/')
 
 def load_pytorch_model(model_path):
     model = torch.load(model_path)
