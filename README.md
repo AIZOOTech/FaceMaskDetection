@@ -25,9 +25,13 @@ MAFA和WIDER Face的人脸位置定义不一样，所以我们进行了修改标
 ![](img/demo.png)
 
 关于本项目的介绍，请参考以下三篇我们公众号的文章
-[AIZOO开源人脸口罩检测数据+模型+代码+在线网页体验，通通都开源了](https://mp.weixin.qq.com/s?__biz=MzIyMDY2MTUyNg==&mid=2247483755&idx=1&sn=102c178eeb359617c67aa8cc615a90ce&chksm=97c9d312a0be5a04935c63857e05b1b00a8b5c298d6fa0ffca35e8d026c09169c3ca62e620a2&mpshare=1&scene=1&srcid=&sharer_sharetime=1585995397229&sharer_shareid=cfe18de94f3a847e5ada278bbc490577&exportkey=AQVINroZXgLbi%2BgTqyA1uG8%3D&pass_ticket=mWIVA3QAV6s8RB5LXrZtstiHlu59hNAG7UDhJOnA43G9Pe8xmbQCr%2FksIbtTbVUi#rd)
-[人脸口罩检测现开源PyTorch、TensorFlow、MXNet等全部五大主流深度学习框架模型和代码](https://mp.weixin.qq.com/s?__biz=MzIyMDY2MTUyNg==&mid=2247483779&idx=1&sn=b9ac5af31adf1dfdc3c87eb1c74836a5&chksm=97c9d3faa0be5aec5d8d893646a77f1147cea4aeda0e8258584729bf9c59a15441f09ff7f100&mpshare=1&scene=1&srcid=&sharer_sharetime=1585995407790&sharer_shareid=cfe18de94f3a847e5ada278bbc490577&exportkey=AROJbMty%2FxxyFnWvnh0coOc%3D&pass_ticket=mWIVA3QAV6s8RB5LXrZtstiHlu59hNAG7UDhJOnA43G9Pe8xmbQCr%2FksIbtTbVUi#rd)
-[如何在浏览器运行深度神经网络？以人脸口罩识别为例进行讲解](https://mp.weixin.qq.com/s?__biz=MzIyMDY2MTUyNg==&mid=2247483795&idx=1&sn=05e5e3e7d895d8993592b3141e39446b&chksm=97c9d3eaa0be5afcb36b8ac124eb5e7d6d86f549f15b634db194eddc784e85f3d7d8abccc216&mpshare=1&scene=1&srcid=&sharer_sharetime=1585995559259&sharer_shareid=cfe18de94f3a847e5ada278bbc490577&exportkey=AYmJnEAPff9hYzZVMv21kss%3D&pass_ticket=mWIVA3QAV6s8RB5LXrZtstiHlu59hNAG7UDhJOnA43G9Pe8xmbQCr%2FksIbtTbVUi#rd)
+
+* [AIZOO开源人脸口罩检测数据+模型+代码+在线网页体验，通通都开源了](https://mp.weixin.qq.com/s?__biz=MzIyMDY2MTUyNg==&mid=2247483755&idx=1&sn=102c178eeb359617c67aa8cc615a90ce&chksm=97c9d312a0be5a04935c63857e05b1b00a8b5c298d6fa0ffca35e8d026c09169c3ca62e620a2&mpshare=1&scene=1&srcid=&sharer_sharetime=1585995397229&sharer_shareid=cfe18de94f3a847e5ada278bbc490577&exportkey=AQVINroZXgLbi%2BgTqyA1uG8%3D&pass_ticket=mWIVA3QAV6s8RB5LXrZtstiHlu59hNAG7UDhJOnA43G9Pe8xmbQCr%2FksIbtTbVUi#rd)
+
+* [人脸口罩检测现开源PyTorch、TensorFlow、MXNet等全部五大主流深度学习框架模型和代码](https://mp.weixin.qq.com/s?__biz=MzIyMDY2MTUyNg==&mid=2247483779&idx=1&sn=b9ac5af31adf1dfdc3c87eb1c74836a5&chksm=97c9d3faa0be5aec5d8d893646a77f1147cea4aeda0e8258584729bf9c59a15441f09ff7f100&mpshare=1&scene=1&srcid=&sharer_sharetime=1585995407790&sharer_shareid=cfe18de94f3a847e5ada278bbc490577&exportkey=AROJbMty%2FxxyFnWvnh0coOc%3D&pass_ticket=mWIVA3QAV6s8RB5LXrZtstiHlu59hNAG7UDhJOnA43G9Pe8xmbQCr%2FksIbtTbVUi#rd)
+
+* [如何在浏览器运行深度神经网络？以人脸口罩识别为例进行讲解](https://mp.weixin.qq.com/s?__biz=MzIyMDY2MTUyNg==&mid=2247483795&idx=1&sn=05e5e3e7d895d8993592b3141e39446b&chksm=97c9d3eaa0be5afcb36b8ac124eb5e7d6d86f549f15b634db194eddc784e85f3d7d8abccc216&mpshare=1&scene=1&srcid=&sharer_sharetime=1585995559259&sharer_shareid=cfe18de94f3a847e5ada278bbc490577&exportkey=AYmJnEAPff9hYzZVMv21kss%3D&pass_ticket=mWIVA3QAV6s8RB5LXrZtstiHlu59hNAG7UDhJOnA43G9Pe8xmbQCr%2FksIbtTbVUi#rd)
+
 我们也使用TensorFlow.js部署了一个网页版，大家可以点击下面链接访问
 欢迎大家点击链接在线体验
 
