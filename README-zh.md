@@ -1,5 +1,5 @@
 # FaceMaskDetection
-[English Version](README.md)
+[English Version](README.md) | 中文版
 ## [updates]
 ### 人脸口罩检测，现开源所有主流框架模型和推理代码，支持的框架如下：
 
