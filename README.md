@@ -71,6 +71,9 @@ If you use wechat, you can follow us.
 
 ![](img/wx.png)
 
+** If you use Wechat, scan the code to add  me on wechat **
+
+![](img/author.jpg)
 
 
 ### Model structure
