@@ -3,11 +3,13 @@
 
 ### We open source all the popular deep learning frameworks' model and inference code to do face mask detection.
 
- - [x] PyTorch
+- [x] PyTorch
 - [x] TensorFlow（include tflite and pb model）
 - [x] Keras
 - [x] MXNet
 - [x] Caffe
+- [x] Paddle
+- [x] OpenCV dnn
 
 
 
@@ -47,6 +49,16 @@ Second ||17x17|0.08,0.11|1,0.62,0.42|
 |Fifth|3x3|0.64,0.72|1,0.62,0.42|
 
 ## How to run
+
+### opencv
+```
+python opencv_dnn_infer.py  --img-path /path/to/your/img
+```
+### paddle
+on image：
+```
+python paddle_infer.py  --img-path /path/to/your/img
+```
 ### pytorch
 on image：
 ```

@@ -8,6 +8,8 @@
 - [x] Keras
 - [x] MXNet
 - [x] Caffe
+- [x] Paddle
+- [x] OpenCV dnn
 
 **检测人脸并判断是否佩戴了口罩， 并开源近8000张人脸口罩标注数据**
 
@@ -56,6 +58,15 @@ MAFA和WIDER Face的人脸位置定义不一样，所以我们进行了修改标
 |第五层|3x3|0.64,0.72|1,0.62,0.42|
 
 ## 运行方法
+### opencv
+```
+python opencv_dnn_infer.py  --img-path /path/to/your/img
+```
+### paddle
+on image：
+```
+python paddle_infer.py  --img-path /path/to/your/img
+```
 ### pytorch
 如果您要运行图片：
 ```
