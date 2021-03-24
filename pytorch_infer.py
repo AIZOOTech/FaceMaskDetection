@@ -135,7 +135,7 @@ def run_on_video(video_path, output_video_name, conf_thresh):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Face Mask Detection")
     parser.add_argument('--img-mode', type=int, default=1, help='set 1 to run on image, 0 to run on video.')
-    parser.add_argument('--img-path', type=str, help='path to your image.')
+    parser.add_argument('--img-path', type=str, default='img/demo2.jpg', help='path to your image.')
     parser.add_argument('--video-path', type=str, default='0', help='path to your video, `0` means to use camera.')
     # parser.add_argument('--hdf5', type=str, help='keras hdf5 file')
     args = parser.parse_args()
