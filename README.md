@@ -71,8 +71,8 @@ python pytorch_infer.py --img-mode 0 --video-path /path/to/video
 python pytorch_infer.py --img-mode 0 --video-path 0
 ```
 ### TensorFlow/Keras/MXNet/Caffe
-The other four frameworks running method is similar to pytorch, just replace `pytorch`with `tensorflow`, `keras`,`caffe`，`mxnet`,
-if you want to use tensorflow, just run:
+The other four frameworks running method is similar to pytorch, just replace `pytorch` with `tensorflow`, `tflite`, `keras`,`caffe` or `mxnet`.
+For instance if you want to use tensorflow, just run:
 ```
 python tensorflow_infer.py  --img-path /path/to/your/img
 ```
